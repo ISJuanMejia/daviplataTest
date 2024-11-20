@@ -1,13 +1,16 @@
 <div class="daviplata-form">
   <app-form-header></app-form-header>
   <div class="daviplata-body">
-    <app-textbox [title]="'Valor'"></app-textbox>
-    <app-textbox [title]="'Número de documento'"></app-textbox>
+    <app-textbox [title]="'Valor'" [icon]="valueIcon"></app-textbox>
+    <app-textbox [title]="'Número de documento'" [icon]="clientIdIcon"></app-textbox>
     <div class="dropdown">
       <label>Tipo de documento</label>
       <div class="input-group">
-        <select class="form-control cursor-pointer">
+        <select class="form-control cursor-pointer" [(ngModel)]="idTypeSelected">
           <option [value]="null" selected>Seleccione una opción</option>
+          <option *ngFor="let option of dropdownOptions" [value]="option.value">
+            {{ option.key }}
+          </option>
         </select>
         <div class="input-group-append">
           <span class="input-group-text">
@@ -15,7 +18,7 @@
           </span>
         </div>
       </div>
-      <div class="error-message">
+      <div class="error-message" *ngIf="!idTypeSelected || idTypeSelected == 'null'">
         <span>Se debe de seleccionar un tipo de identificación.</span>
       </div>
     </div>
@@ -23,5 +26,6 @@
   <app-form-footer
     [value]="'Validar usuario'"
     (actionEmitter)="validarUsuario()"
+    [disabled]="!idTypeSelected || idTypeSelected == 'null'"
   ></app-form-footer>
 </div>
