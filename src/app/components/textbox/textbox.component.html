@@ -1,0 +1,21 @@
+<div class="textbox">
+  <label>{{ title }}</label>
+  <div class="input-group">
+    <input
+      class="form-control textbox-input"
+      [placeholder]="title"
+      [disabled]="disabled"
+      type="number"
+    />
+    <div class="input-group-append">
+      <span class="input-group-text">
+        <fa-icon [icon]="icon"></fa-icon>
+      </span>
+    </div>
+  </div>
+  <div class="error-message">
+    <span
+      >{{ title ? 'Se debe de ingresar un ' + title.toLowerCase() : '' }}.</span
+    >
+  </div>
+</div>

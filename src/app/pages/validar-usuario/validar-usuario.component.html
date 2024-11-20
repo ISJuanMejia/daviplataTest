@@ -1,0 +1,27 @@
+<div class="daviplata-form">
+  <app-form-header></app-form-header>
+  <div class="daviplata-body">
+    <app-textbox [title]="'Valor'"></app-textbox>
+    <app-textbox [title]="'Número de documento'"></app-textbox>
+    <div class="dropdown">
+      <label>Tipo de documento</label>
+      <div class="input-group">
+        <select class="form-control cursor-pointer">
+          <option [value]="null" selected>Seleccione una opción</option>
+        </select>
+        <div class="input-group-append">
+          <span class="input-group-text">
+            <fa-icon [icon]="dropdownIcon"></fa-icon>
+          </span>
+        </div>
+      </div>
+      <div class="error-message">
+        <span>Se debe de seleccionar un tipo de identificación.</span>
+      </div>
+    </div>
+  </div>
+  <app-form-footer
+    [value]="'Validar usuario'"
+    (actionEmitter)="validarUsuario()"
+  ></app-form-footer>
+</div>
