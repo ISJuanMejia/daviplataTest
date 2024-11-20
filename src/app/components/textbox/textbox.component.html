@@ -5,7 +5,8 @@
       class="form-control textbox-input"
       [placeholder]="title"
       [disabled]="disabled"
-      type="number"
+      [(ngModel)]="value"
+      type="text"
     />
     <div class="input-group-append">
       <span class="input-group-text">
@@ -13,7 +14,7 @@
       </span>
     </div>
   </div>
-  <div class="error-message">
+  <div class="error-message" *ngIf="!value">
     <span
       >{{ title ? 'Se debe de ingresar un ' + title.toLowerCase() : '' }}.</span
     >
