@@ -19,7 +19,7 @@ export class TextboxComponent {
   title: string | null = null;
 
   @Input()
-  value: number | null = null;
+  value: string | null = null;
 
   @Input()
   icon: IconDefinition = faFaceSmile;
@@ -28,17 +28,17 @@ export class TextboxComponent {
   disabled: boolean = false;
 
   @Output()
-  valueEmitter = new EventEmitter<number | null>();
+  valueEmitter = new EventEmitter<string | null>();
 
   @Input()
   type: string = "text";
 
   canShowEmptyError = false;
 
-  public onInputChange(event: Event): void {
+  public onInputChange(event: string | null): void {
     if (!this.canShowEmptyError) {
       this.canShowEmptyError = true;
     }
-    const input = event.target as HTMLInputElement;
+    this.valueEmitter.emit(event);
   }
 }

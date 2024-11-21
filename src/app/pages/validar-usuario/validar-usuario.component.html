@@ -1,8 +1,8 @@
 <div class="daviplata-form">
   <app-form-header></app-form-header>
   <div class="daviplata-body">
-    <app-textbox title="Valor" [icon]="valueIcon"></app-textbox>
-    <app-textbox title="Número de documento" [icon]="clientIdIcon" type="number"></app-textbox>
+    <app-textbox title="Valor" [icon]="valueIcon" (valueEmitter)="value = $event"></app-textbox>
+    <app-textbox title="Número de documento" [icon]="clientIdIcon" type="number" (valueEmitter)="idClient = $event"></app-textbox>
     <div class="dropdown">
       <label>Tipo de documento</label>
       <div class="input-group">
@@ -25,5 +25,5 @@
     </div>
   </div>
   <app-form-footer [value]="'Validar usuario'" (actionEmitter)="validarUsuario()"
-    [disabled]="!idTypeSelected"></app-form-footer>
+    [disabled]="!idTypeSelected || !value || !idClient"></app-form-footer>
 </div>

@@ -14,6 +14,8 @@ import { faLock } from "@fortawesome/free-solid-svg-icons";
 export class ValidarOtpComponent {
   icon = faLock;
 
+  otpCode: string | null = null;
+
   public validarOtp(): void {
     console.log("Validar OTP");
   }

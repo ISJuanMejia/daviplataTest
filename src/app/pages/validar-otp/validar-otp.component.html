@@ -1,7 +1,7 @@
 <div class="daviplata-form">
   <app-form-header></app-form-header>
   <div class="daviplata-body">
-    <app-textbox [title]="'Código OTP'" [icon]="icon"></app-textbox>
+    <app-textbox [title]="'Código OTP'" [icon]="icon" (valueEmitter)="otpCode = $event"></app-textbox>
   </div>
-  <app-form-footer [value]="'Validar OTP'" (actionEmitter)="validarOtp()"></app-form-footer>
+  <app-form-footer [value]="'Validar OTP'" (actionEmitter)="validarOtp()" [disabled]="!otpCode"></app-form-footer>
 </div>

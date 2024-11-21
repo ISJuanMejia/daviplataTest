@@ -30,7 +30,9 @@ import { Router } from "@angular/router";
 export class ValidarUsuarioComponent {
   valueIcon = faDollarSign;
 
-  value: number | null = null;
+  value: string | null = null;
+
+  idClient: string | null = null;
 
   clientIdIcon = faIdCard;
 
@@ -60,11 +62,11 @@ export class ValidarUsuarioComponent {
       html: "Espere un momento",
       allowOutsideClick: false,
       allowEscapeKey: false,
-      timer: 4000,
+      // timer: 4000,
       didOpen: () => {
         Swal.showLoading();
         //Resultado exitoso
-        Swal.clickConfirm();
+        // Swal.clickConfirm();
         //Resuktado erroneo
         //Swal.clickCancel();
       },
