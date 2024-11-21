@@ -29,4 +29,7 @@ export class TextboxComponent {
 
   @Output()
   valueEmitter = new EventEmitter<number | null>();
+
+  @Input()
+  type: string = 'text';
 }

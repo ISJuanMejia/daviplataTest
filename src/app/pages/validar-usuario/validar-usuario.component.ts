@@ -22,7 +22,7 @@ import { Router } from "@angular/router";
         TextboxComponent,
         FontAwesomeModule,
         FormsModule,
-        CommonModule
+        CommonModule,
     ],
     templateUrl: "./validar-usuario.component.html",
     styleUrl: "./validar-usuario.component.css",
