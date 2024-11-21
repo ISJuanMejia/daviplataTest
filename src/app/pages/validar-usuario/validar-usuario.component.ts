@@ -5,13 +5,13 @@ import { TextboxComponent } from "../../components/textbox/textbox.component";
 import { FontAwesomeModule } from "@fortawesome/angular-fontawesome";
 import {
     faAddressCard,
-    faCircleChevronDown,
     faDollarSign,
     faIdCard,
 } from "@fortawesome/free-solid-svg-icons";
 import Swal from "sweetalert2";
 import { CommonModule } from "@angular/common";
 import { FormsModule } from "@angular/forms";
+import { Router } from "@angular/router";
 
 @Component({
     selector: "app-validar-usuario",
@@ -44,6 +44,8 @@ export class ValidarUsuarioComponent {
         { key: "Tarjeta de identidad", value: "03" },
     ];
 
+    constructor(private router: Router) {}
+
     public validarUsuario(): void {
         Swal.fire({
             title: "Validando información del cliente",
@@ -65,6 +67,8 @@ export class ValidarUsuarioComponent {
                     icon: "success",
                     showConfirmButton: false,
                     timer: 1500,
+                }).then(() => {
+                    this.router.navigate(["/validar-otp"]);
                 });
             } else if (result.dismiss === Swal.DismissReason.cancel) {
                 Swal.fire({
