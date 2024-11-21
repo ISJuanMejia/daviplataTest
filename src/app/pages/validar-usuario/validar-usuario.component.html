@@ -6,7 +6,7 @@
     <div class="dropdown">
       <label>Tipo de documento</label>
       <div class="input-group">
-        <select class="form-control cursor-pointer" [(ngModel)]="idTypeSelected">
+        <select class="form-control dropdown-input cursor-pointer" [(ngModel)]="idTypeSelected">
           <option [ngValue]="null" selected>Seleccione una opción</option>
           <option *ngFor="let option of dropdownOptions" [value]="option.value">
             {{ option.key }}
