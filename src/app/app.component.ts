@@ -1,12 +1,13 @@
-import { Component } from '@angular/core';
-import { ValidarOtpComponent } from './pages/validar-otp/validar-otp.component';
-import { ValidarUsuarioComponent } from './pages/validar-usuario/validar-usuario.component';
+import { Component } from "@angular/core";
+import { RouterOutlet } from "@angular/router";
 
 @Component({
-  selector: 'app-root',
-  standalone: true,
-  imports: [ValidarOtpComponent, ValidarUsuarioComponent],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.css',
+    selector: "app-root",
+    standalone: true,
+    imports: [
+        RouterOutlet
+    ],
+    templateUrl: "./app.component.html",
+    styleUrls: ["./app.component.css"],
 })
 export class AppComponent {}
