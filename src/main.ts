@@ -5,12 +5,12 @@ import { ValidarOtpComponent } from "./app/pages/validar-otp/validar-otp.compone
 import { AppComponent } from "./app/app.component";
 
 const routes: Routes = [
-    { path: "validar-usuario", component: ValidarUsuarioComponent },
-    { path: "validar-otp", component: ValidarOtpComponent },
-    { path: "", redirectTo: "validar-usuario", pathMatch: "full" },
-    { path: "**", redirectTo: "validar-usuario" },
+  { path: "validar-usuario", component: ValidarUsuarioComponent },
+  { path: "validar-otp", component: ValidarOtpComponent },
+  { path: "", redirectTo: "validar-usuario", pathMatch: "full" },
+  { path: "**", redirectTo: "validar-usuario" },
 ];
 
 bootstrapApplication(AppComponent, {
-    providers: [provideRouter(routes)],
+  providers: [provideRouter(routes)],
 }).catch((err) => console.error(err));

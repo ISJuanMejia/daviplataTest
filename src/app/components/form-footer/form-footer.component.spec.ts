@@ -1,8 +1,8 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from "@angular/core/testing";
 
-import { FormFooterComponent } from './form-footer.component';
+import { FormFooterComponent } from "./form-footer.component";
 
-describe('FormFooterComponent', () => {
+describe("FormFooterComponent", () => {
   let component: FormFooterComponent;
   let fixture: ComponentFixture<FormFooterComponent>;
 
@@ -16,7 +16,7 @@ describe('FormFooterComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });
