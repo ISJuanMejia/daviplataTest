@@ -1,11 +1,11 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from "@angular/core";
 
 @Component({
-  selector: 'app-form-footer',
+  selector: "app-form-footer",
   standalone: true,
   imports: [],
-  templateUrl: './form-footer.component.html',
-  styleUrl: './form-footer.component.css',
+  templateUrl: "./form-footer.component.html",
+  styleUrl: "./form-footer.component.css",
 })
 export class FormFooterComponent {
   @Input()
@@ -18,7 +18,7 @@ export class FormFooterComponent {
   actionEmitter = new EventEmitter<any>();
 
   public action(): void {
-    console.log('hola mundo');
+    console.log("hola mundo");
     this.actionEmitter.emit();
   }
 }

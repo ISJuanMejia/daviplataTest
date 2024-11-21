@@ -6,7 +6,8 @@
     <div class="dropdown">
       <label>Tipo de documento</label>
       <div class="input-group">
-        <select class="form-control dropdown-input cursor-pointer" [(ngModel)]="idTypeSelected">
+        <select class="form-control dropdown-input cursor-pointer" [(ngModel)]="idTypeSelected"
+          (ngModelChange)="onDropdownValueChange($event)">
           <option [ngValue]="null" selected>Seleccione una opción</option>
           <option *ngFor="let option of dropdownOptions" [value]="option.value">
             {{ option.key }}
@@ -18,14 +19,11 @@
           </span>
         </div>
       </div>
-      <div class="error-message" *ngIf="!idTypeSelected || idTypeSelected == 'null'">
+      <div class="error-message" *ngIf="dropdownCanShowEmptyError && !idTypeSelected">
         <span>Se debe de seleccionar un tipo de identificación.</span>
       </div>
     </div>
   </div>
-  <app-form-footer
-    [value]="'Validar usuario'"
-    (actionEmitter)="validarUsuario()"
-    [disabled]="!idTypeSelected"
-  ></app-form-footer>
+  <app-form-footer [value]="'Validar usuario'" (actionEmitter)="validarUsuario()"
+    [disabled]="!idTypeSelected"></app-form-footer>
 </div>

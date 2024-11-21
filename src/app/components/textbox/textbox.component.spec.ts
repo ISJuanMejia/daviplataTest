@@ -1,8 +1,8 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from "@angular/core/testing";
 
-import { TextboxComponent } from './textbox.component';
+import { TextboxComponent } from "./textbox.component";
 
-describe('TextboxComponent', () => {
+describe("TextboxComponent", () => {
   let component: TextboxComponent;
   let fixture: ComponentFixture<TextboxComponent>;
 
@@ -16,7 +16,7 @@ describe('TextboxComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });

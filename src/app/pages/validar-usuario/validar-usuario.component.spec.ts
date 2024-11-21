@@ -1,8 +1,8 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from "@angular/core/testing";
 
-import { ValidarUsuarioComponent } from './validar-usuario.component';
+import { ValidarUsuarioComponent } from "./validar-usuario.component";
 
-describe('ValidarUsuarioComponent', () => {
+describe("ValidarUsuarioComponent", () => {
   let component: ValidarUsuarioComponent;
   let fixture: ComponentFixture<ValidarUsuarioComponent>;
 
@@ -16,7 +16,7 @@ describe('ValidarUsuarioComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });

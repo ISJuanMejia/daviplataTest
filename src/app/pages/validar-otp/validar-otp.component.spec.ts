@@ -1,8 +1,8 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from "@angular/core/testing";
 
-import { ValidarOtpComponent } from './validar-otp.component';
+import { ValidarOtpComponent } from "./validar-otp.component";
 
-describe('ValidarOtpComponent', () => {
+describe("ValidarOtpComponent", () => {
   let component: ValidarOtpComponent;
   let fixture: ComponentFixture<ValidarOtpComponent>;
 
@@ -16,7 +16,7 @@ describe('ValidarOtpComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });
