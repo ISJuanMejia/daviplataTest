@@ -45,12 +45,17 @@ export class ValidarUsuarioComponent {
     { key: "Cédula de extranjería", value: "02" },
     { key: "Tarjeta de identidad", value: "03" },
   ];
+  dropdownOptions2 = [
+    { key: "CC", value: "01" },
+    { key: "CE", value: "02" },
+    { key: "TI", value: "03" },
+  ];
 
   dropdownCanShowEmptyError = false;
 
   constructor(private router: Router) {}
 
-  public onDropdownValueChange(value: string | null): void {
+  public onDropdownValueChange(): void {
     if (!this.dropdownCanShowEmptyError) {
       this.dropdownCanShowEmptyError = true;
     }
@@ -81,6 +86,7 @@ export class ValidarUsuarioComponent {
           this.router.navigate(["/validar-otp"]);
         });
       } else if (result.dismiss === Swal.DismissReason.cancel) {
+        // TODO: Recibir el código de error
         Swal.fire({
           title: "No se pudo enviar el código",
           text: "Error 404: Not Found",

@@ -7,7 +7,7 @@
       <label>Tipo de documento</label>
       <div class="input-group">
         <select class="form-control dropdown-input cursor-pointer" [(ngModel)]="idTypeSelected"
-          (ngModelChange)="onDropdownValueChange($event)">
+          (ngModelChange)="onDropdownValueChange()">
           <option [ngValue]="null" selected>Seleccione una opción</option>
           <option *ngFor="let option of dropdownOptions" [value]="option.value">
             {{ option.key }}
@@ -21,6 +21,18 @@
       </div>
       <div class="error-message" *ngIf="dropdownCanShowEmptyError && !idTypeSelected">
         <span>Se debe de seleccionar un tipo de identificación.</span>
+      </div>
+    </div>
+    <div style="width: 100% !important; padding: 0px 10px; margin: 10px 0px 0px 0px; display: flex;">
+      <select class="form-control dropdown-input cursor-pointer" style="width: 70px !important; border-radius: 0.375rem 0 0 0.375rem;">
+        <option *ngFor="let option of dropdownOptions2" [value]="option.value">
+          {{ option.key }}
+      </select>
+      <input class="form-control textbox-input" style="font-weight: lighter; border-radius: 0px !important;" placeholder="Número de documento" [disabled]="false" [(ngModel)]="idClient" type="text"/>
+      <div class="input-group-append">
+        <span class="input-group-text">
+          <fa-icon [icon]="clientIdIcon"></fa-icon>
+        </span>
       </div>
     </div>
   </div>
